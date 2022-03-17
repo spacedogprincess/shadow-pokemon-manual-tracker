@@ -1,0 +1,395 @@
+<html>
+
+
+
+<head>
+<?php require 'server_connection_open_.php'; ?>
+
+
+
+<title>Pokemon_tracker</title>
+
+<script src="slot_code.js"></script>
+
+<link rel="preconnect" href="http://fonts.googleapis.com">
+<link rel="preconnect" href="http://fonts.gstatic.com" crossorigin>
+<link href="http://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+<link href="main.css" rel="stylesheet" type="text/css" />
+<link rel="preconnect" href="http://fonts.gstatic.com">
+<link href="http://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+
+<body>
+<div class="front_end_roster">
+<div class="roster_1_sprite" id="roster_1_sprite" style="background-image:url('');"></div>
+<div class="roster_2_sprite" id="roster_2_sprite" style="background-image:url('');"></div>
+<div class="roster_3_sprite" id="roster_3_sprite" style="background-image:url('');"></div>
+<div class="roster_4_sprite" id="roster_4_sprite" style="background-image:url('');"></div>
+<div class="roster_5_sprite" id="roster_5_sprite" style="background-image:url('');"></div>
+<div class="roster_6_sprite" id="roster_6_sprite" style="background-image:url('');"></div>
+
+<div class="roster_1_nickname" id="roster_1_nickname"></div>
+<div class="roster_1_species" id="roster_1_species"></div>
+<div class="roster_1_level" id="roster_1_level"></div>
+<div class="roster_1_type_1" id="roster_1_type_1"></div>
+<div class="roster_1_type_2" id="roster_1_type_2"></div>
+<div class="roster_1_gender" id="roster_1_gender"></div>
+
+<div class="roster_2_nickname" id="roster_2_nickname"></div>
+<div class="roster_2_species" id="roster_2_species"></div>
+<div class="roster_2_level" id="roster_2_level"></div>
+<div class="roster_2_type_1" id="roster_2_type_1"></div>
+<div class="roster_2_type_2" id="roster_2_type_2"></div>
+<div class="roster_2_gender" id="roster_2_gender"></div>
+
+<div class="roster_3_nickname" id="roster_3_nickname"></div>
+<div class="roster_3_species" id="roster_3_species"></div>
+<div class="roster_3_level" id="roster_3_level"></div>
+<div class="roster_3_type_1" id="roster_3_type_1"></div>
+<div class="roster_3_type_2" id="roster_3_type_2"></div>
+<div class="roster_3_gender" id="roster_3_gender"></div>
+
+<div class="roster_4_nickname" id="roster_4_nickname"></div>
+<div class="roster_4_species" id="roster_4_species"></div>
+<div class="roster_4_level" id="roster_4_level"></div>
+<div class="roster_4_type_1" id="roster_4_type_1"></div>
+<div class="roster_4_type_2" id="roster_4_type_2"></div>
+<div class="roster_4_gender" id="roster_4_gender"></div>
+
+<div class="roster_5_nickname" id="roster_5_nickname"></div>
+<div class="roster_5_species" id="roster_5_species"></div>
+<div class="roster_5_level" id="roster_5_level"></div>
+<div class="roster_5_type_1" id="roster_5_type_1"></div>
+<div class="roster_5_type_2" id="roster_5_type_2"></div>
+<div class="roster_5_gender" id="roster_5_gender"></div>
+
+<div class="roster_6_nickname" id="roster_6_nickname"></div>
+<div class="roster_6_species" id="roster_6_species"></div>
+<div class="roster_6_level" id="roster_6_level"></div>
+<div class="roster_6_type_1" id="roster_6_type_1"></div>
+<div class="roster_6_type_2" id="roster_6_type_2"></div>
+<div class="roster_6_gender" id="roster_6_gender"></div>
+
+</div>
+
+
+
+<div class="pokemon_input_field">
+<!-- This code is where the user can enter all their info into the form before updating it live on stream -->
+
+<div class="pokemon_slot">
+<p><input type="radio" id="pkmn_1" name="slot_number" value="1">
+Pokemon: <input type="text" id="pkmn_1_species" value="" readonly>
+<input type="hidden" id="pkmn_1_type_1" value="0">
+<input type="hidden" id="pkmn_1_type_2" value="0">
+<input type="hidden" id="pkmn_1_hdex">
+Nickname: <input type="text" id="pkmn_1_nickname">
+Level: <input type="text" size="4" id="pkmn_1_level">
+<input type="checkbox" id="pkmn_1_shiny">Shiny
+<input type="submit" value="Clear Slot" onclick="clear_slot(1)">
+<input type="submit" value="Copy Slot" onclick="inherit_slot(1)">
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="gender" type="radio" id="pkmn_1_gender" name="pkmn_1_gender" value="0">No Gender
+<input class="gender" type="radio" id="pkmn_1_gender" name="pkmn_1_gender" value="1">Female
+<input class="gender" type="radio" id="pkmn_1_gender" name="pkmn_1_gender" value="2">Male
+</div>
+
+<p><input type="radio" id="pkmn_2" name="slot_number" value="2">
+Pokemon: <input type="text" id="pkmn_2_species" value="" readonly>
+<input type="hidden" id="pkmn_2_type_1" value="0">
+<input type="hidden" id="pkmn_2_type_2" value="0">
+<input type="hidden" id="pkmn_2_hdex">
+Nickname: <input type="text" id="pkmn_2_nickname">
+Level: <input type="text" size="4" id="pkmn_2_level">
+<input type="checkbox" id="pkmn_2_shiny">Shiny
+<input type="submit" value="Clear Slot" onclick="clear_slot(2)">
+<input type="submit" value="Copy Slot" onclick="inherit_slot(2)">
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="gender" type="radio" id="pkmn_2_gender" name="pkmn_2_gender" value="0">No Gender
+<input class="gender" type="radio" id="pkmn_2_gender" name="pkmn_2_gender" value="1">Female
+<input class="gender" type="radio" id="pkmn_2_gender" name="pkmn_2_gender" value="2">Male
+
+<p><input type="radio" id="pkmn_3" name="slot_number" value="3">
+Pokemon: <input type="text" id="pkmn_3_species" value="" readonly>
+<input type="hidden" id="pkmn_3_type_1" value="0">
+<input type="hidden" id="pkmn_3_type_2" value="0">
+<input type="hidden" id="pkmn_3_hdex">
+Nickname: <input type="text" id="pkmn_3_nickname">
+Level: <input type="text" size="4" id="pkmn_3_level">
+<input type="checkbox" id="pkmn_3_shiny">Shiny
+<input type="submit" value="Clear Slot" onclick="clear_slot(3)">
+<input type="submit" value="Copy Slot" onclick="inherit_slot(3)">
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="gender" type="radio" id="pkmn_3_gender" name="pkmn_3_gender" value="0">No Gender
+<input class="gender" type="radio" id="pkmn_3_gender" name="pkmn_3_gender" value="1">Female
+<input class="gender" type="radio" id="pkmn_3_gender" name="pkmn_3_gender" value="2">Male
+
+<p><input type="radio" id="pkmn_4" name="slot_number" value="4">
+Pokemon: <input type="text" id="pkmn_4_species" value="" readonly>
+<input type="hidden" id="pkmn_4_type_1" value="0">
+<input type="hidden" id="pkmn_4_type_2" value="0">
+<input type="hidden" id="pkmn_4_hdex">
+Nickname: <input type="text" id="pkmn_4_nickname">
+Level: <input type="text" size="4" id="pkmn_4_level">
+<input type="checkbox" id="pkmn_4_shiny">Shiny
+<input type="submit" value="Clear Slot" onclick="clear_slot(4)">
+<input type="submit" value="Copy Slot" onclick="inherit_slot(4)">
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="gender" type="radio" id="pkmn_4_gender" name="pkmn_4_gender" value="0">No Gender
+<input class="gender" type="radio" id="pkmn_4_gender" name="pkmn_4_gender" value="1">Female
+<input class="gender" type="radio" id="pkmn_4_gender" name="pkmn_4_gender" value="2">Male
+
+<p><input type="radio" id="pkmn_5" name="slot_number" value="5">
+Pokemon: <input type="text" id="pkmn_5_species" value="" readonly>
+<input type="hidden" id="pkmn_5_type_1" value="0">
+<input type="hidden" id="pkmn_5_type_2" value="0">
+<input type="hidden" id="pkmn_5_hdex">
+Nickname: <input type="text" id="pkmn_5_nickname">
+Level: <input type="text" size="4" id="pkmn_5_level">
+<input type="checkbox" id="pkmn_5_shiny">Shiny
+<input type="submit" value="Clear Slot" onclick="clear_slot(5)">
+<input type="submit" value="Copy Slot" onclick="inherit_slot(5)">
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="gender" type="radio" id="pkmn_5_gender" name="pkmn_5_gender" value="0">No Gender
+<input class="gender" type="radio" id="pkmn_5_gender" name="pkmn_5_gender" value="1">Female
+<input class="gender" type="radio" id="pkmn_5_gender" name="pkmn_5_gender" value="2">Male
+
+<p><input type="radio" id="pkmn_6" name="slot_number" value="6">
+Pokemon: <input type="text" id="pkmn_6_species" value="" readonly>
+<input type="hidden" id="pkmn_6_type_1" value="0">
+<input type="hidden" id="pkmn_6_type_2" value="0">
+<input type="hidden" id="pkmn_6_hdex">
+Nickname: <input type="text" id="pkmn_6_nickname">
+Level: <input type="text" size="4" id="pkmn_6_level">
+<input type="checkbox" id="pkmn_6_shiny">Shiny
+<input type="submit" value="Clear Slot" onclick="clear_slot(6)">
+<input type="submit" value="Copy Slot" onclick="inherit_slot(6)">
+<br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input class="gender" type="radio" id="pkmn_6_gender" name="pkmn_6_gender" value="0">No Gender
+<input class="gender" type="radio" id="pkmn_6_gender" name="pkmn_6_gender" value="1">Female
+<input class="gender" type="radio" id="pkmn_6_gender" name="pkmn_6_gender" value="2">Male
+
+<p><input type="submit" value="Update Roster" onclick="update_roster()">
+
+
+</div>
+
+<div class="pokefield">
+  <img src="https://www.serebii.net/pokedex-swsh/icon/252.png" class="pkmn_icon" onclick="load_pokemon('Treecko', 12, 0, 1)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/253.png" class="pkmn_icon" onclick="load_pokemon('Grovyle', 12, 0, 2)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/254.png" class="pkmn_icon" onclick="load_pokemon('Sceptile', 12, 0, 3)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/255.png" class="pkmn_icon" onclick="load_pokemon('Torchic', 10, 0, 4)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/256.png" class="pkmn_icon" onclick="load_pokemon('Combusken', 10, 2, 5)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/257.png" class="pkmn_icon" onclick="load_pokemon('Blaziken', 10, 2, 6)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/258.png" class="pkmn_icon" onclick="load_pokemon('Mudkip', 11, 0, 7)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/259.png" class="pkmn_icon" onclick="load_pokemon('Marshtomp', 11, 5, 8)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/260.png" class="pkmn_icon" onclick="load_pokemon('Swampert', 11, 5, 9)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/261.png" class="pkmn_icon" onclick="load_pokemon('Poochyena', 17, 0, 10)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/262.png" class="pkmn_icon" onclick="load_pokemon('Mightyena', 17, 0, 11)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/263.png" class="pkmn_icon" onclick="load_pokemon('Zigzagoon', 1, 0, 12)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/264.png" class="pkmn_icon" onclick="load_pokemon('Linoone', 1, 0, 13)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/265.png" class="pkmn_icon" onclick="load_pokemon('Wurmple', 7, 0, 14)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/266.png" class="pkmn_icon" onclick="load_pokemon('Silcoon', 7, 0, 15)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/267.png" class="pkmn_icon" onclick="load_pokemon('Beautifly', 7, 3, 16)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/268.png" class="pkmn_icon" onclick="load_pokemon('Cascoon', 7, 0, 17)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/269.png" class="pkmn_icon" onclick="load_pokemon('Dustox', 7, 4, 18)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/270.png" class="pkmn_icon" onclick="load_pokemon('Lotad', 11, 12, 19)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/271.png" class="pkmn_icon" onclick="load_pokemon('Lombre', 11, 12, 20)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/272.png" class="pkmn_icon" onclick="load_pokemon('Ludicolo', 11, 12, 21)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/273.png" class="pkmn_icon" onclick="load_pokemon('Seedot', 12, 0, 22)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/274.png" class="pkmn_icon" onclick="load_pokemon('Nuzleaf', 12, 17, 23)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/275.png" class="pkmn_icon" onclick="load_pokemon('Shiftry', 12, 17, 24)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/276.png" class="pkmn_icon" onclick="load_pokemon('Taillow', 1, 3, 25)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/277.png" class="pkmn_icon" onclick="load_pokemon('Swellow', 1, 3, 26)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/278.png" class="pkmn_icon" onclick="load_pokemon('Wingull', 11, 3, 27)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/279.png" class="pkmn_icon" onclick="load_pokemon('Pelipper', 11, 3, 28)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/280.png" class="pkmn_icon" onclick="load_pokemon('Ralts', 14, 18, 29)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/281.png" class="pkmn_icon" onclick="load_pokemon('Kirlia', 14, 18, 30)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/282.png" class="pkmn_icon" onclick="load_pokemon('Gardevoir', 14, 18, 31)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/475.png" class="pkmn_icon" onclick="load_pokemon('Gallade', 14, 2, 32)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/283.png" class="pkmn_icon" onclick="load_pokemon('Surskit', 7, 11, 33)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/284.png" class="pkmn_icon" onclick="load_pokemon('Masquerain', 7, 3, 34)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/285.png" class="pkmn_icon" onclick="load_pokemon('Shroomish', 12, 0, 35)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/286.png" class="pkmn_icon" onclick="load_pokemon('Breloom', 12, 2, 36)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/287.png" class="pkmn_icon" onclick="load_pokemon('Slakoth', 1, 0, 37)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/288.png" class="pkmn_icon" onclick="load_pokemon('Vigoroth', 1, 0, 38)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/289.png" class="pkmn_icon" onclick="load_pokemon('Slaking', 1, 0, 39)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/063.png" class="pkmn_icon" onclick="load_pokemon('Abra', 14, 0, 40)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/064.png" class="pkmn_icon" onclick="load_pokemon('Kadabra', 14, 0, 41)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/065.png" class="pkmn_icon" onclick="load_pokemon('Alakazam', 14, 0, 42)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/290.png" class="pkmn_icon" onclick="load_pokemon('Nincada', 7, 5, 43)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/291.png" class="pkmn_icon" onclick="load_pokemon('Ninjask', 7, 3, 44)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/292.png" class="pkmn_icon" onclick="load_pokemon('Shedinja', 7, 8, 45)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/293.png" class="pkmn_icon" onclick="load_pokemon('Whismur', 1, 0, 46)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/294.png" class="pkmn_icon" onclick="load_pokemon('Loudred', 1, 0, 47)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/295.png" class="pkmn_icon" onclick="load_pokemon('Exploud', 1, 0, 48)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/296.png" class="pkmn_icon" onclick="load_pokemon('Makuhita', 2, 0, 49)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/297.png" class="pkmn_icon" onclick="load_pokemon('Hariyama', 2, 0, 50)" />
+
+  <img src="https://www.serebii.net/pokedex-swsh/icon/118.png" class="pkmn_icon" onclick="load_pokemon('Goldeen', 11, 0, 51)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/119.png" class="pkmn_icon" onclick="load_pokemon('Seaking', 11, 0, 52)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/129.png" class="pkmn_icon" onclick="load_pokemon('Magikarp', 11, 0, 53)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/130.png" class="pkmn_icon" onclick="load_pokemon('Gyarados', 11, 3, 54)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/298.png" class="pkmn_icon" onclick="load_pokemon('Azurill', 1, 18, 55)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/183.png" class="pkmn_icon" onclick="load_pokemon('Marill', 11, 18, 56)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/184.png" class="pkmn_icon" onclick="load_pokemon('Azumarill', 11, 18, 57)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/074.png" class="pkmn_icon" onclick="load_pokemon('Geodude', 6, 5, 58)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/075.png" class="pkmn_icon" onclick="load_pokemon('Graveler', 6, 5, 59)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/076.png" class="pkmn_icon" onclick="load_pokemon('Golem', 6, 5, 60)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/299.png" class="pkmn_icon" onclick="load_pokemon('Nosepass', 6, 0, 61)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/476.png" class="pkmn_icon" onclick="load_pokemon('Probopass', 6, 9, 62)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/300.png" class="pkmn_icon" onclick="load_pokemon('Skitty', 1, 0, 63)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/301.png" class="pkmn_icon" onclick="load_pokemon('Delcatty', 1, 0, 64)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/041.png" class="pkmn_icon" onclick="load_pokemon('Zubat', 4, 3, 65)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/042.png" class="pkmn_icon" onclick="load_pokemon('Golbat', 4, 3, 66)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/169.png" class="pkmn_icon" onclick="load_pokemon('Crobat', 4, 3, 67)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/072.png" class="pkmn_icon" onclick="load_pokemon('Tentacool', 11, 4, 68)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/073.png" class="pkmn_icon" onclick="load_pokemon('Tentacruel', 11, 4, 69)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/302.png" class="pkmn_icon" onclick="load_pokemon('Sableye', 17, 8, 70)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/303.png" class="pkmn_icon" onclick="load_pokemon('Mawile', 9, 18, 71)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/304.png" class="pkmn_icon" onclick="load_pokemon('Aron', 9, 6, 72)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/305.png" class="pkmn_icon" onclick="load_pokemon('Lairon', 9, 6, 73)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/306.png" class="pkmn_icon" onclick="load_pokemon('Aggron', 9, 6, 74)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/066.png" class="pkmn_icon" onclick="load_pokemon('Machop', 2, 0, 75)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/067.png" class="pkmn_icon" onclick="load_pokemon('Machoke', 2, 0, 76)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/068.png" class="pkmn_icon" onclick="load_pokemon('Machamp', 2, 0, 77)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/307.png" class="pkmn_icon" onclick="load_pokemon('Meditite', 2, 14, 78)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/308.png" class="pkmn_icon" onclick="load_pokemon('Medicham', 2, 14, 79)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/309.png" class="pkmn_icon" onclick="load_pokemon('Electrike', 13, 0, 80)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/310.png" class="pkmn_icon" onclick="load_pokemon('Manectric', 13, 0, 81)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/311.png" class="pkmn_icon" onclick="load_pokemon('Plusle', 13, 0, 82)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/312.png" class="pkmn_icon" onclick="load_pokemon('Minun', 13, 0, 83)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/081.png" class="pkmn_icon" onclick="load_pokemon('Magnemite', 13, 9, 84)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/082.png" class="pkmn_icon" onclick="load_pokemon('Magneton', 13, 9, 85)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/462.png" class="pkmn_icon" onclick="load_pokemon('Magnezone', 13, 9, 86)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/100.png" class="pkmn_icon" onclick="load_pokemon('Voltorb', 13, 0, 87)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/101.png" class="pkmn_icon" onclick="load_pokemon('Electrode', 13, 0, 88)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/313.png" class="pkmn_icon" onclick="load_pokemon('Volbeat', 7, 0, 89)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/314.png" class="pkmn_icon" onclick="load_pokemon('Illumise', 7, 0, 90)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/043.png" class="pkmn_icon" onclick="load_pokemon('Oddish', 12, 4, 91)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/044.png" class="pkmn_icon" onclick="load_pokemon('Gloom', 12, 4, 92)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/045.png" class="pkmn_icon" onclick="load_pokemon('Vileplume', 12, 4, 93)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/182.png" class="pkmn_icon" onclick="load_pokemon('Bellossom', 12, 0, 94)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/084.png" class="pkmn_icon" onclick="load_pokemon('Doduo', 1, 3, 95)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/085.png" class="pkmn_icon" onclick="load_pokemon('Dodrio', 1, 3, 96)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/406.png" class="pkmn_icon" onclick="load_pokemon('Budew', 12, 4, 97)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/315.png" class="pkmn_icon" onclick="load_pokemon('Roselia', 12, 4, 98)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/407.png" class="pkmn_icon" onclick="load_pokemon('Roserade', 12, 4, 99)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/316.png" class="pkmn_icon" onclick="load_pokemon('Gulpin', 4, 0, 100)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/317.png" class="pkmn_icon" onclick="load_pokemon('Swalot', 4, 0, 101)" />
+
+  <img src="https://www.serebii.net/pokedex-swsh/icon/318.png" class="pkmn_icon" onclick="load_pokemon('Carvanha', 11, 17, 102)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/319.png" class="pkmn_icon" onclick="load_pokemon('Sharpedo', 11, 17, 103)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/320.png" class="pkmn_icon" onclick="load_pokemon('Wailmer', 11, 0, 104)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/321.png" class="pkmn_icon" onclick="load_pokemon('Wailord', 11, 0, 105)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/322.png" class="pkmn_icon" onclick="load_pokemon('Numel', 10, 5, 106)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/323.png" class="pkmn_icon" onclick="load_pokemon('Camerupt', 10, 5, 107)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/218.png" class="pkmn_icon" onclick="load_pokemon('Slugma', 10, 0, 108)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/219.png" class="pkmn_icon" onclick="load_pokemon('Magcargo', 10, 6, 109)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/324.png" class="pkmn_icon" onclick="load_pokemon('Torkoal', 10, 0, 110)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/088.png" class="pkmn_icon" onclick="load_pokemon('Grimer', 4, 0, 111)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/089.png" class="pkmn_icon" onclick="load_pokemon('Muk', 4, 0, 112)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/109.png" class="pkmn_icon" onclick="load_pokemon('Koffing', 4, 0, 113)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/110.png" class="pkmn_icon" onclick="load_pokemon('Weezing', 4, 0, 114)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/325.png" class="pkmn_icon" onclick="load_pokemon('Spoink', 14, 0, 115)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/326.png" class="pkmn_icon" onclick="load_pokemon('Grumpig', 14, 0, 116)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/027.png" class="pkmn_icon" onclick="load_pokemon('Sandshrew', 5, 0, 117)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/028.png" class="pkmn_icon" onclick="load_pokemon('Sandslash', 5, 0, 118)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/327.png" class="pkmn_icon" onclick="load_pokemon('Spinda', 1, 0, 119)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/227.png" class="pkmn_icon" onclick="load_pokemon('Skarmory', 9, 3, 120)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/328.png" class="pkmn_icon" onclick="load_pokemon('Trapinch', 5, 0, 121)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/329.png" class="pkmn_icon" onclick="load_pokemon('Vibrava', 5, 16, 122)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/330.png" class="pkmn_icon" onclick="load_pokemon('Flygon', 5, 16, 123)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/331.png" class="pkmn_icon" onclick="load_pokemon('Cacnea', 12, 0, 124)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/332.png" class="pkmn_icon" onclick="load_pokemon('Cacturne', 12, 17, 125)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/333.png" class="pkmn_icon" onclick="load_pokemon('Swablu', 1, 3, 126)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/334.png" class="pkmn_icon" onclick="load_pokemon('Altaria', 16, 3, 127)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/335.png" class="pkmn_icon" onclick="load_pokemon('Zangoose', 1, 0, 128)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/336.png" class="pkmn_icon" onclick="load_pokemon('Seviper', 4, 0, 129)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/337.png" class="pkmn_icon" onclick="load_pokemon('Lunatone', 6, 14, 130)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/338.png" class="pkmn_icon" onclick="load_pokemon('Solrock', 6, 14, 131)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/339.png" class="pkmn_icon" onclick="load_pokemon('Barboach', 11, 5, 132)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/340.png" class="pkmn_icon" onclick="load_pokemon('Whiscash', 11, 5, 133)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/341.png" class="pkmn_icon" onclick="load_pokemon('Corphish', 11, 0, 134)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/342.png" class="pkmn_icon" onclick="load_pokemon('Crawdaunt', 11, 17, 135)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/343.png" class="pkmn_icon" onclick="load_pokemon('Baltoy', 5, 14, 136)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/344.png" class="pkmn_icon" onclick="load_pokemon('Claydol', 5, 14, 137)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/345.png" class="pkmn_icon" onclick="load_pokemon('Lileep', 6, 12, 138)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/346.png" class="pkmn_icon" onclick="load_pokemon('Cradily', 6, 12, 139)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/347.png" class="pkmn_icon" onclick="load_pokemon('Anorith', 6, 7, 140)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/348.png" class="pkmn_icon" onclick="load_pokemon('Armaldo', 6, 7, 141)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/174.png" class="pkmn_icon" onclick="load_pokemon('Igglybuff', 1, 18, 142)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/039.png" class="pkmn_icon" onclick="load_pokemon('Jigglypuff', 1, 18, 143)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/040.png" class="pkmn_icon" onclick="load_pokemon('Wigglytuff', 1, 18, 144)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/349.png" class="pkmn_icon" onclick="load_pokemon('Feebas', 11, 0, 145)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/350.png" class="pkmn_icon" onclick="load_pokemon('Milotic', 11, 0, 146)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/351.png" class="pkmn_icon" onclick="load_pokemon('Castform', 1, 0, 147)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/120.png" class="pkmn_icon" onclick="load_pokemon('Staryu', 11, 0, 148)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/121.png" class="pkmn_icon" onclick="load_pokemon('Starmie', 11, 14, 149)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/352.png" class="pkmn_icon" onclick="load_pokemon('Kecleon', 1, 0, 150)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/353.png" class="pkmn_icon" onclick="load_pokemon('Shuppet', 8, 0, 151)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/354.png" class="pkmn_icon" onclick="load_pokemon('Banette', 8, 0, 152)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/355.png" class="pkmn_icon" onclick="load_pokemon('Duskull', 8, 0, 153)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/356.png" class="pkmn_icon" onclick="load_pokemon('Dusclops', 8, 0, 154)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/477.png" class="pkmn_icon" onclick="load_pokemon('Dusknoir', 8, 0, 155)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/357.png" class="pkmn_icon" onclick="load_pokemon('Tropius', 12, 3, 156)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/433.png" class="pkmn_icon" onclick="load_pokemon('Chingling', 14, 0, 157)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/358.png" class="pkmn_icon" onclick="load_pokemon('Chimecho', 14, 0, 158)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/359.png" class="pkmn_icon" onclick="load_pokemon('Absol', 17, 0, 159)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/037.png" class="pkmn_icon" onclick="load_pokemon('Vulpix', 10, 0, 160)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/038.png" class="pkmn_icon" onclick="load_pokemon('Ninetales', 10, 0, 161)" />
+
+  <img src="https://www.serebii.net/pokedex-swsh/icon/172.png" class="pkmn_icon" onclick="load_pokemon('Pichu', 13, 0, 162)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/025.png" class="pkmn_icon" onclick="load_pokemon('Pikachu', 13, 0, 163)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/026.png" class="pkmn_icon" onclick="load_pokemon('Raichu', 13, 0, 164)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/054.png" class="pkmn_icon" onclick="load_pokemon('Psyduck', 11, 0, 165)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/055.png" class="pkmn_icon" onclick="load_pokemon('Golduck', 11, 0, 166)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/360.png" class="pkmn_icon" onclick="load_pokemon('Wynaut', 14, 0, 167)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/202.png" class="pkmn_icon" onclick="load_pokemon('Wobbuffet', 14, 0, 168)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/177.png" class="pkmn_icon" onclick="load_pokemon('Natu', 14, 3, 169)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/178.png" class="pkmn_icon" onclick="load_pokemon('Xatu', 14, 3, 170)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/203.png" class="pkmn_icon" onclick="load_pokemon('Girafarig', 1, 14, 171)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/231.png" class="pkmn_icon" onclick="load_pokemon('Phanpy', 5, 0, 172)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/232.png" class="pkmn_icon" onclick="load_pokemon('Donphan', 5, 0, 173)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/127.png" class="pkmn_icon" onclick="load_pokemon('Pinsir', 7, 0, 174)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/214.png" class="pkmn_icon" onclick="load_pokemon('Heracross', 7, 2, 175)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/111.png" class="pkmn_icon" onclick="load_pokemon('Rhyhorn', 5, 6, 176)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/112.png" class="pkmn_icon" onclick="load_pokemon('Rhydon', 5, 6, 177)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/464.png" class="pkmn_icon" onclick="load_pokemon('Rhyperior', 5, 6, 178)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/361.png" class="pkmn_icon" onclick="load_pokemon('Snorunt', 15, 0, 179)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/362.png" class="pkmn_icon" onclick="load_pokemon('Glalie', 15, 0, 180)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/478.png" class="pkmn_icon" onclick="load_pokemon('Froslass', 15, 8, 181)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/363.png" class="pkmn_icon" onclick="load_pokemon('Spheal', 15, 11, 182)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/364.png" class="pkmn_icon" onclick="load_pokemon('Sealeo', 15, 11, 183)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/365.png" class="pkmn_icon" onclick="load_pokemon('Walrein', 15, 11, 184)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/366.png" class="pkmn_icon" onclick="load_pokemon('Clamperl', 11, 0, 185)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/367.png" class="pkmn_icon" onclick="load_pokemon('Huntail', 11, 0, 186)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/368.png" class="pkmn_icon" onclick="load_pokemon('Gorebyss', 11, 0, 187)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/369.png" class="pkmn_icon" onclick="load_pokemon('Relicanth', 11, 6, 188)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/222.png" class="pkmn_icon" onclick="load_pokemon('Corsola', 11, 6, 189)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/170.png" class="pkmn_icon" onclick="load_pokemon('Chinchou', 11, 13, 190)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/171.png" class="pkmn_icon" onclick="load_pokemon('Lanturn', 11, 13, 191)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/370.png" class="pkmn_icon" onclick="load_pokemon('Luvdisc', 11, 0, 192)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/116.png" class="pkmn_icon" onclick="load_pokemon('Horsea', 11, 0, 193)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/117.png" class="pkmn_icon" onclick="load_pokemon('Seadra', 11, 0, 194)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/230.png" class="pkmn_icon" onclick="load_pokemon('Kingdra', 11, 16, 195)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/371.png" class="pkmn_icon" onclick="load_pokemon('Bagon', 16, 0, 196)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/372.png" class="pkmn_icon" onclick="load_pokemon('Shelgon', 16, 0, 197)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/373.png" class="pkmn_icon" onclick="load_pokemon('Salamence', 16, 3, 198)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/374.png" class="pkmn_icon" onclick="load_pokemon('Beldum', 9, 14, 199)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/375.png" class="pkmn_icon" onclick="load_pokemon('Metang', 9, 14, 200)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/376.png" class="pkmn_icon" onclick="load_pokemon('Metagross', 9, 14, 201)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/377.png" class="pkmn_icon" onclick="load_pokemon('Regirock', 6, 0, 202)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/378.png" class="pkmn_icon" onclick="load_pokemon('Regice', 15, 0, 203)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/379.png" class="pkmn_icon" onclick="load_pokemon('Registeel', 9, 0, 204)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/380.png" class="pkmn_icon" onclick="load_pokemon('Latias', 16, 14, 205)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/381.png" class="pkmn_icon" onclick="load_pokemon('Latios', 16, 14, 206)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/382.png" class="pkmn_icon" onclick="load_pokemon('Kyogre', 11, 0, 207)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/383.png" class="pkmn_icon" onclick="load_pokemon('Groudon', 5, 0, 208)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/384.png" class="pkmn_icon" onclick="load_pokemon('Rayquaza', 16, 3, 209)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/385.png" class="pkmn_icon" onclick="load_pokemon('Jirachi', 9, 14, 210)" />
+  <img src="https://www.serebii.net/pokedex-swsh/icon/386.png" class="pkmn_icon" onclick="load_pokemon('Deoxys', 14, 0, 211)" />
+
+
+
+
+</div>
+
+</body>
+</html>
